@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Timer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MiningType" Type="Timer.Enums.MiningType" Scope="User">
+      <Value Profile="(Default)">Ice</Value>
+    </Setting>
+    <Setting Name="OreHold" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">15000</Value>
+    </Setting>
+    <Setting Name="CycleTime" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">33.1</Value>
+    </Setting>
+    <Setting Name="YieldPerHarvester" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="WarningSeconds" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="WarningSound" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Sounds\Fanfare.wav</Value>
+    </Setting>
+    <Setting Name="NoOfHarvesters" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="Volume" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
