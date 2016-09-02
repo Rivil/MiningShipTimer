@@ -85,7 +85,7 @@ namespace Timer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Sounds\\Fanfare.wav")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string WarningSound {
             get {
                 return ((string)(this["WarningSound"]));

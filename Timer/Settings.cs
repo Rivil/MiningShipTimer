@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Media;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -13,6 +15,12 @@ namespace Timer
 {
     public partial class Settings : Telerik.WinControls.UI.RadForm
     {
+        [DllImport("winmm.dll")]
+        public static extern int waveOutGetVolume(IntPtr hwo, out uint dwVolume);
+
+        [DllImport("winmm.dll")]
+        public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
+
         private bool warningShown;
 
         public Settings()
@@ -75,11 +83,13 @@ namespace Timer
             {
                 lblYieldPerHarvester.Visible = false;
                 txtYieldPerHarvester.Visible = false;
+                radLabel2.Visible = false;
             }
             else
             {
                 lblYieldPerHarvester.Visible = true;
                 txtYieldPerHarvester.Visible = true;
+                radLabel2.Visible = false;
             }
         }
 
@@ -89,12 +99,36 @@ namespace Timer
             {
                 lblYieldPerHarvester.Visible = true;
                 txtYieldPerHarvester.Visible = true;
+                radLabel2.Visible = true;
             }
             else
             {
                 lblYieldPerHarvester.Visible = false;
                 txtYieldPerHarvester.Visible = false;
+                radLabel2.Visible = false;
             }
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            SetVolume();
+            PlaySound();
+        }
+
+        private void SetVolume()
+        {
+            // Calculate the volume that's being set. BTW: this is a trackbar!
+            int NewVolume = ((ushort.MaxValue / 10) * Convert.ToInt32(rtbVolume.Value));
+            // Set the same volume for both the left and the right channels
+            uint NewVolumeAllChannels = (((uint) NewVolume & 0x0000ffff) | ((uint) NewVolume << 16));
+            // Set the volume
+            waveOutSetVolume(IntPtr.Zero, NewVolumeAllChannels);
+        }
+
+        private void PlaySound()
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@Model.Settings.Instance.WarningSound);
+            simpleSound.Play();
         }
     }
 }

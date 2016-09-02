@@ -114,7 +114,14 @@ namespace Timer.Model
 
         public string WarningSound
         {
-            get { return Properties.Settings.Default.WarningSound; }
+            get
+            {
+                if (Properties.Settings.Default.WarningSound == "")
+                {
+                    return AppDomain.CurrentDomain.BaseDirectory + "Sounds\\Fanfare.Wav";
+                }
+                return Properties.Settings.Default.WarningSound;
+            }
             set
             {
                 if (Properties.Settings.Default.WarningSound != value)

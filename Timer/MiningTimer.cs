@@ -207,7 +207,7 @@ namespace Timer
         {
             Model.Settings.Instance.PropertyChanged += InstanceOnPropertyChanged;
             new Settings().ShowDialog();
-
+            SetVolume();
         }
 
         private void InstanceOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)

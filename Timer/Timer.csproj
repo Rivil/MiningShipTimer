@@ -114,7 +114,9 @@
     <None Include="Resources\Quit.ico" />
     <Content Include="Resources\Settings.ico" />
     <Content Include="Resources\Stop.ico" />
-    <Content Include="Sounds\Fanfare.wav" />
+    <Content Include="Sounds\Fanfare.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />

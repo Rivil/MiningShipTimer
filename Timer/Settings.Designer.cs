@@ -56,8 +56,10 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.txtYieldPerHarvester = new Telerik.WinControls.UI.RadMaskedEditBox();
             this.btnSave = new Telerik.WinControls.UI.RadButton();
-            this.rtbVolume = new Telerik.WinControls.UI.RadTrackBar();
             this.lblVolume = new Telerik.WinControls.UI.RadLabel();
+            this.rtbVolume = new Telerik.WinControls.UI.RadTrackBar();
+            this.tlpVolume = new System.Windows.Forms.TableLayoutPanel();
+            this.btnTest = new Telerik.WinControls.UI.RadButton();
             this.tlpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblMiningType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblOreHold)).BeginInit();
@@ -84,8 +86,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYieldPerHarvester)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rtbVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtbVolume)).BeginInit();
+            this.tlpVolume.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,8 +113,8 @@
             this.tlpMain.Controls.Add(this.tlpCycleTime, 1, 5);
             this.tlpMain.Controls.Add(this.tlpYieldPerHarvester, 1, 6);
             this.tlpMain.Controls.Add(this.btnSave, 1, 8);
-            this.tlpMain.Controls.Add(this.rtbVolume, 1, 7);
             this.tlpMain.Controls.Add(this.lblVolume, 0, 7);
+            this.tlpMain.Controls.Add(this.tlpVolume, 1, 7);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -442,18 +446,6 @@
             this.btnSave.ThemeName = "VisualStudio2012Dark";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // rtbVolume
-            // 
-            this.rtbVolume.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbVolume.LargeTickFrequency = 2;
-            this.rtbVolume.Location = new System.Drawing.Point(153, 213);
-            this.rtbVolume.Maximum = 10F;
-            this.rtbVolume.Name = "rtbVolume";
-            this.rtbVolume.Size = new System.Drawing.Size(277, 32);
-            this.rtbVolume.TabIndex = 16;
-            this.rtbVolume.Text = "rtbValume";
-            this.rtbVolume.ThemeName = "VisualStudio2012Dark";
-            // 
             // lblVolume
             // 
             this.lblVolume.Location = new System.Drawing.Point(3, 213);
@@ -462,6 +454,45 @@
             this.lblVolume.TabIndex = 17;
             this.lblVolume.Text = "Volume:";
             this.lblVolume.ThemeName = "VisualStudio2012Dark";
+            // 
+            // rtbVolume
+            // 
+            this.rtbVolume.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbVolume.LargeTickFrequency = 2;
+            this.rtbVolume.Location = new System.Drawing.Point(3, 3);
+            this.rtbVolume.Maximum = 10F;
+            this.rtbVolume.Name = "rtbVolume";
+            this.rtbVolume.Size = new System.Drawing.Size(197, 32);
+            this.rtbVolume.TabIndex = 16;
+            this.rtbVolume.Text = "rtbValume";
+            this.rtbVolume.ThemeName = "VisualStudio2012Dark";
+            // 
+            // tlpVolume
+            // 
+            this.tlpVolume.ColumnCount = 2;
+            this.tlpVolume.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpVolume.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tlpVolume.Controls.Add(this.rtbVolume, 0, 0);
+            this.tlpVolume.Controls.Add(this.btnTest, 1, 0);
+            this.tlpVolume.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpVolume.Location = new System.Drawing.Point(150, 210);
+            this.tlpVolume.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpVolume.Name = "tlpVolume";
+            this.tlpVolume.RowCount = 1;
+            this.tlpVolume.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpVolume.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpVolume.Size = new System.Drawing.Size(283, 35);
+            this.tlpVolume.TabIndex = 18;
+            // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(206, 3);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(74, 24);
+            this.btnTest.TabIndex = 17;
+            this.btnTest.Text = "Test";
+            this.btnTest.ThemeName = "VisualStudio2012Dark";
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // Settings
             // 
@@ -509,8 +540,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYieldPerHarvester)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rtbVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rtbVolume)).EndInit();
+            this.tlpVolume.ResumeLayout(false);
+            this.tlpVolume.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -547,5 +581,7 @@
         private Telerik.WinControls.UI.RadButton btnSave;
         private Telerik.WinControls.UI.RadTrackBar rtbVolume;
         private Telerik.WinControls.UI.RadLabel lblVolume;
+        private System.Windows.Forms.TableLayoutPanel tlpVolume;
+        private Telerik.WinControls.UI.RadButton btnTest;
     }
 }
